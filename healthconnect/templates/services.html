@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% load static %} {% block title %}HealthConnect -
+Telemedicine Platform{% endblock %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'styles/index.css' %}" />
+{% endblock %} {% block content %}
+<main class="homepage-content">
+  <section id="features" class="features-section">
+    <h2 style="font-size: 50px; font-weight: 900; color: rgb(0, 187, 255)">
+      HealthConnect Consultation Services
+    </h2>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3 class="card-title">Secure Video & Audio</h3>
+        <p>
+          Real-time, secure video conferencing and audio calls for comprehensive
+          virtual appointments.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3 class="card-title">Secure Messaging</h3>
+        <p>
+          Encrypted messaging for non-urgent queries and easy follow-ups with
+          your trusted doctor.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3 class="card-title">Appointments</h3>
+        <p>
+          Book, reschedule, and manage all sessions instantly via a streamlined
+          patient dashboard.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3 class="card-title">Health Information Access</h3>
+        <p>
+          Access your medical records, lab results, and health history securely
+          anytime, anywhere.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="data-security-section">
+    <div class="security-content-wrapper">
+      <div class="security-text-block">
+        <h2 class="security-title">
+          Confidentiality, Privacy, and Data Protection 🛡️
+        </h2>
+        <p class="security-paragraph">
+          We treat your personal information with the utmost care. All shared
+          data is professionally handled, and our platform adheres to the strict
+          data protection and privacy acts of Kenya to guarantee absolute
+          security.
+        </p>
+        <ul class="security-list">
+          <li>✅ Encrypted Records Access</li>
+          <li>✅ Secure Payment Processing</li>
+          <li>✅ Automated Appointment Reminders (Email/SMS)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %} {% block extra_js %}
+<script src="{% static 'scripts/base.js' %}"></script>
+{% endblock %}

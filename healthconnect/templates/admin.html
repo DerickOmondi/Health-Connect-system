@@ -1,0 +1,53 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HealthConnectUsers Admin List</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/admin.css' %}"
+    />
+  </head>
+  <body>
+    <h2>Select HealthConnectUsers to change</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Other Names</th>
+          <th>Email</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in healthconnect_users %}
+        <tr>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.other_names }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.username }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div style="margin-top: 30px">
+      <h3>Filters</h3>
+      <p>
+        Filter by Last Name: Doe, Smith, Johnson, etc. (Placeholder for the
+        list_filter)
+      </p>
+
+      <h3>Search</h3>
+      <input
+        type="text"
+        placeholder="Search by name or email..."
+        style="padding: 8px; width: 300px"
+      />
+    </div>
+  </body>
+</html>

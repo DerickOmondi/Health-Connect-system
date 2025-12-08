@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% load static %} {% block title %}User Page{%
+endblock %} {% block header %}
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo-group">
+      <a href="/"
+        ><img
+          src="{% static 'images/logo.jpg' %}"
+          alt="logo"
+          class="logo-image"
+      /></a>
+      <p class="logo">HEALTH<br />CONNECT</p>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/" class="nav-link active">Dashboard</a></li>
+      </ul>
+    </nav>
+
+    {# You can add new elements here, e.g., a welcome message or user icon #}
+    <div class="user-info">
+      <span class="welcome-text">Welcome, {{ request.user.username }}!</span>
+    </div>
+  </div>
+</header>
+{% endblock header %} {% block content %}
+<div style="text-align: center; margin-top: 100px">
+  <h1>Welcome, {{ request.user.username }}!</h1>
+  <p>You have successfully logged in to HealthConnect.</p>
+</div>
+{% endblock %}

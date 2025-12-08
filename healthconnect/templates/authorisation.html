@@ -1,0 +1,63 @@
+<div id="authorise" class="form">
+  <div class="form-content">
+    <span class="close-btn">&times;</span>
+
+    <div class="tabs">
+      <button class="tab-link active" onclick="openForm(event, 'Login')">
+        Log In
+      </button>
+      <button class="tab-link" onclick="openForm(event, 'Signup')">
+        Sign Up
+      </button>
+    </div>
+
+    <div id="Login" class="tab-content active">
+      <h2>Log In to HealthConnect</h2>
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <label for="login-username">Email/Username</label>
+        <input type="text" id="login-username" name="username" required />
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" required />
+
+        <button type="submit" class="form-submit-btn">Log In</button>
+        <p class="forgot-password"><a href="#">Forgot Password?</a></p>
+      </form>
+    </div>
+
+    <div id="Signup" class="tab-content">
+      <h2>Create Your HealthConnect Account</h2>
+      <form action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <label for="signup-name-first">First Name</label>
+        <input type="text" id="signup-name-first" name="first_name" required />
+        <label for="signup-name-last">Last Name</label>
+        <input type="text" id="signup-name-last" name="last_name" required />
+        <label for="signup-name-other">Other Names</label>
+        <input type="text" id="signup-name-other" name="other_names" optional />
+
+        <label for="signup-email-modal">Email Address</label>
+        <input type="email" id="signup-email-modal" name="email" required />
+
+        <label for="signup-username-modal">Username</label>
+        <input
+          type="text"
+          id="signup-username-modal"
+          name="username"
+          required
+        />
+
+        <label for="signup-password-modal">Password</label>
+        <input
+          type="password"
+          id="signup-password-modal"
+          name="password"
+          required
+        />
+
+        <button type="submit" class="form-submit-btn">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</div>

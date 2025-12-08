@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<div class="form-page-wrapper">
+    <div class="form-content">
+        <h2>Log In to HealthConnect</h2>
+        
+        {% if messages %}
+            <ul class="messages" style="list-style-type: none; padding: 0;">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: red; margin-bottom: 10px;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="{% url 'login' %}" method="POST"> 
+            {% csrf_token %}
+            <label for="login-username">Email/Username</label>
+            <input type="text" id="login-username" name="username" required>
+            
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" required>
+            
+            <button type="submit" class="form-submit-btn">Log In</button>
+            <p class="forgot-password"><a href="#">Forgot Password?</a></p>
+        </form>
+        <p style="text-align: center; margin-top: 15px;">
+            Don't have an account? <a href="{% url 'signup' %}">Sign Up</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

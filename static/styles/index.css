@@ -1,0 +1,174 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.homepage-content {
+  min-height: 80vh;
+}
+
+.hero-section,
+.features-section,
+.impact-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero-section {
+  background-color: #e9f7ff;
+}
+
+.data-security-section {
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+}
+
+.hero-section h1 {
+  font-size: 2.5em;
+  color: #004085;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle,
+.section-subtitle {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.hero-cta-group {
+  margin-top: 40px;
+}
+
+.cta-button {
+  padding: 12px 30px;
+  font-size: 1.1em;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
+}
+
+.cta-button.primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-right: 15px;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.cta-button.primary:hover {
+  background-color: #0056b3;
+}
+
+.cta-button.secondary:hover {
+  background-color: #e9f7ff;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  width: 22%;
+  min-width: 250px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  text-align: left;
+
+  display: block;
+}
+
+.feature-card .card-title {
+  color: #007bff;
+  font-size: 1.3em;
+  margin-top: 0;
+}
+
+.security-content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  text-align: left;
+}
+
+.security-text-block {
+  flex: 1;
+  min-width: 300px;
+}
+
+.security-title {
+  color: #004085;
+  font-size: 2em;
+}
+
+.security-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.security-list li {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.security-image-block {
+  flex: 1;
+  min-width: 300px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-style: italic;
+}
+
+.impact-title {
+  color: #28a745;
+}
+
+.admin-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #007bff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .feature-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 80%;
+  }
+
+  .security-content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+}
