@@ -1,5 +1,9 @@
-{% extends 'base.html' %} {% load static %} {% block title %}User Page{%
-endblock %} {% block header %}
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %}User Page{% endblock %} 
+
+{% block header %}
 <header class="main-header">
   <div class="header-container">
     <div class="logo-group">
@@ -24,7 +28,9 @@ endblock %} {% block header %}
     </div>
   </div>
 </header>
-{% endblock header %} {% block content %}
+{% endblock header %} 
+
+{% block content %}
 <div style="text-align: center; margin-top: 100px">
   <h1>Welcome, {{ request.user.username }}!</h1>
   <p>You have successfully logged in to HealthConnect.</p>

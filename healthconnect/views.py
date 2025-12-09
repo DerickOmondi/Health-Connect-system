@@ -31,34 +31,6 @@ def admin_panel(request):
 
 
 
-
-def login_view(request):
-    """Handles user login and session creation."""
-    if request.method == 'POST':
-        username_or_email = request.POST.get('username') 
-        password = request.POST.get('password')
-
-        user = None
-        try:
-            user = HealthConnectUsers.objects.get(email=username_or_email)
-        except HealthConnectUsers.DoesNotExist:
-            try:
-                user = HealthConnectUsers.objects.get(username=username_or_email)
-            except HealthConnectUsers.DoesNotExist:
-                pass 
-        
-       
-        if user and user.check_password(password): 
-            login(request, user) 
-            messages.success(request, f'Welcome back, {user.first_name}!')
-            return redirect('user')
-        else:
-            messages.error(request, 'Invalid Email/Username or Password.')
-            return render(request, 'log-in.html') 
-
-    return render(request, 'log-in.html')
-
-
 def signup(request):
     """Handles user registration and password complexity validation."""
     if request.method == 'POST':
@@ -69,7 +41,7 @@ def signup(request):
         username = request.POST.get('username')
         raw_password = request.POST.get('password')
         
-        # --- PASSWORD VALIDATION ---
+   
         try:
             password_validation.validate_password(raw_password, user=None)
         except ValidationError as e:
@@ -102,3 +74,34 @@ def logout_view(request):
         logout(request)
         messages.info(request, "You have been logged out successfully.")
     return redirect('index')
+
+# In healthconnect/views.py
+
+def login_view(request):
+    """Handles user login and session creation."""
+    if request.method == 'POST':
+        username_or_email = request.POST.get('username') 
+        password = request.POST.get('password')
+
+        user = None
+        # Attempt to find user by email
+        try:
+            user = HealthConnectUsers.objects.get(email=username_or_email)
+        except HealthConnectUsers.DoesNotExist:
+            # If not found by email, attempt to find by username
+            try:
+                user = HealthConnectUsers.objects.get(username=username_or_email)
+            except HealthConnectUsers.DoesNotExist:
+                pass 
+        
+       
+        if user and user.check_password(password): 
+         
+            login(request, user) 
+            messages.success(request, f'Welcome back, {user.first_name}!')
+            return redirect('user')
+        else:
+            messages.error(request, 'Invalid Email/Username or Password.')
+            return render(request, 'log-in.html') 
+
+    return render(request, 'log-in.html')

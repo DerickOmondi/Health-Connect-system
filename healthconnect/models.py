@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.contrib.auth.hashers import make_password 
 
-
-
 class HealthConnectUsersManager(BaseUserManager):
     def create_user(self, email, username, password=None, **extra_fields):
         if not email:
@@ -17,6 +15,12 @@ class HealthConnectUsersManager(BaseUserManager):
     def create_superuser(self, email, username, password=None, **extra_fields):
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
+        
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff=True.')
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser must have is_superuser=True.')
+            
         return self.create_user(email, username, password, **extra_fields)
 
 
@@ -27,8 +31,10 @@ class HealthConnectUsers(AbstractBaseUser):
     email = models.EmailField(unique=True, blank=False, null=False)
     username = models.CharField(max_length=30, unique=True, blank=False, null=False) 
   
-    date_joined = models.DateTimeField(auto_now_add=True)
-    last_login = models.DateTimeField(auto_now=True)
+    # ❌ date_joined REMOVED
+    # last_login remains, with the fix for the previous TypeError
+    last_login = models.DateTimeField(auto_now=True, null=True, blank=True)
+    
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
