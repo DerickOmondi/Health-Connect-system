@@ -175,3 +175,29 @@ body {
     color: white; 
     transform: translateY(-1px);
 }
+
+/* Add these styles to your header.css */
+
+.user-info {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    gap: 20px; /* Spacing between welcome text and actions */
+}
+
+.welcome-text {
+    font-size: 18px;
+    color: #343a40;
+    font-weight: 500;
+}
+
+.user-actions {
+    /* If you had more than just the logout button, this would organize them */
+    display: flex;
+    align-items: center;
+}
+
+/* Ensure the cta-button style remains clean in this context */
+.cta-button {
+    /* ... existing styles ... */
+    padding: 8px 16px; /* Slightly smaller padding for better header fit */
+}

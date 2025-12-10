@@ -1,0 +1,140 @@
+/* healthconnect/static/css/dashboard.css */
+
+.dashboard-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* 1. Welcome and Status Widget */
+.welcome-widget {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-widget p {
+    color: #6c757d;
+}
+
+.status-indicator {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+/* 2. Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.quick-action-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.quick-action-card h3 {
+    margin-bottom: 15px;
+}
+
+.quick-action-card p {
+    margin-bottom: 20px;
+}
+
+/* Quick Action Button Styles (Themed by Card) */
+.quick-action-card:nth-child(1) h3 {
+    color: #007bff; /* Blue */
+}
+.quick-action-card:nth-child(1) a {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.quick-action-card:nth-child(2) h3 {
+    color: #ffc107; /* Yellow */
+}
+.quick-action-card:nth-child(2) a {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #343a40;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.quick-action-card:nth-child(3) h3 {
+    color: #17a2b8; /* Cyan/Teal */
+}
+.quick-action-card:nth-child(3) a {
+    display: inline-block;
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* 3. Recent Activity/Upcoming Appointments Section */
+.activity-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.activity-section h2 {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.activity-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.activity-section li {
+    padding: 15px;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.activity-section li:last-child {
+    border-bottom: none;
+}
+
+.activity-section li span {
+    float: right;
+    color: #007bff;
+}
+
+.activity-section p.center-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.activity-section p.center-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
