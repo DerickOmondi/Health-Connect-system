@@ -8,6 +8,7 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles/header.css' %}">
     <link rel="stylesheet" href="{% static 'styles/authorise.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/index.css' %}">
     
     {# NEW BLOCK: This is where page-specific CSS (like index.css) will be injected #}
     {% block extra_css %}{% endblock %} 
@@ -25,9 +26,8 @@
             <nav class="main-nav">
                 <ul>
                     <li><a href="{% url 'index' %}" class="nav-link active">Home</a></li>
-                    <li><a href="" class="nav-link">About</a></li>
-                    <li><a href="{% url 'services' %}" class="nav-link">Services</a></li>
-                    <li><a href="" class="nav-link">Help</a></li>
+                    <li><a href="{% url  'about' %}" class="nav-link">About</a></li>
+                    <li><a href="{% url 'help' %}" class="nav-link">Help</a></li>
                 </ul>
             </nav>
 
@@ -55,7 +55,17 @@
         {% block content %}
             {% endblock content %}
     </main>
-    
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p>&copy; {% now "Y" %} HealthConnect. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="{% url 'services' %}">Services</a> | 
+                <a href="">Privacy Policy</a> | 
+                <a href="">Terms of Use</a>
+            </nav>
+        </div>
+    </footer>
 <script src="{% static 'scripts/base.js' %}"></script>
 
 {# NEW BLOCK: This is where page-specific JS (if any) should be injected #}

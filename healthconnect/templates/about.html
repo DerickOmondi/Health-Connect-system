@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - HEALTHCONNECT{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'styles/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="about-hero">
+    <div class="container text-center">
+        <h1>Our Commitment to Your Well-being</h1>
+        <p class="lead-text">Connecting you to better health, anytime, anywhere.</p>
+    </div>
+</section>
+
+<section class="mission-vision-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mission-item">
+                <h2>Our Mission</h2>
+                <p>To revolutionize healthcare access by providing a secure, reliable, and user-friendly platform that seamlessly connects patients with trusted healthcare providers and resources.</p>
+            </div>
+            <div class="col-md-6 vision-item">
+                <h2>Our Vision</h2>
+                <p>To be the leading digital health platform, empowering individuals to take control of their health journey and fostering a global community committed to wellness.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="values-section bg-light py-5">
+    <div class="container text-center">
+        <h2>Our Core Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <h3><i class="icon">✓</i> Integrity</h3>
+                <p>We maintain the highest standards of ethical conduct and professionalism in all our interactions.</p>
+            </div>
+            <div class="value-card">
+                <h3><i class="icon">✨</i> Innovation</h3>
+                <p>We continuously adapt and leverage technology to improve the efficiency of patient care and service delivery.</p>
+            </div>
+            <div class="value-card">
+                <h3><i class="icon">❤️</i> Empathy</h3>
+                <p>We treat every user with compassion, understanding, and respect, prioritizing their unique health needs.</p>
+            </div>
+            <div class="value-card">
+                <h3><i class="icon">🔒</i> Security</h3>
+                <p>We prioritize the privacy and security of all patient data with industry-leading encryption and standards.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section py-5 text-center">
+    <div class="container">
+        <h2>Ready to Join HealthConnect?</h2>
+        <p>Experience the future of personal healthcare today.</p>
+        <a href="{% url 'signup' %}" class="btn-primary">Get Started Now</a>
+    </div>
+</section>
+
+{% endblock content %}

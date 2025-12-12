@@ -33,7 +33,7 @@
     </nav>
 
     <div class="user-info">
-      <span class="welcome-text">Hello, **{{ request.user.first_name|default:request.user.username }}**!</span>
+      <span class="welcome-text">Hello, {{ request.user.first_name|default:request.user.username }}!</span>
       
       <div class="user-actions">
         <a href="{% url 'logout' %}" class="cta-button">Log Out</a>

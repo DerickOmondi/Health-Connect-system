@@ -29,6 +29,14 @@ def admin_panel(request):
     healthconnect_users = HealthConnectUsers.objects.all()
     return render(request, 'admin.html', {'healthconnect_users': healthconnect_users})
 
+def help(request):
+    """Renders the help page."""
+    return render(request, 'help.html')
+
+def about(request):
+    """Renders the about page."""
+    return render(request, 'about.html')
+
 
 
 def signup(request):
@@ -105,3 +113,4 @@ def login_view(request):
             return render(request, 'log-in.html') 
 
     return render(request, 'log-in.html')
+

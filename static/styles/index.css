@@ -172,3 +172,40 @@ body {
     text-align: center;
   }
 }
+
+/* --- Footer Styles --- */
+
+.main-footer {
+    background-color: #333; /* Dark background */
+    color: #f8f9fa; /* Light text */
+    padding: 20px 0;
+    /* KEY: This centers the text content */
+    text-align: center; 
+    border-top: 4px solid #007bff; /* Accent color border */
+    margin-top: 40px; /* Space above the footer */
+}
+
+.footer-container {
+    /* Optional: Sets a max width and uses auto margins to center the entire block */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-footer p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.footer-nav a {
+    color: #a0c4ff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: white;
+    text-decoration: underline;
+}
