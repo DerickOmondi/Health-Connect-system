@@ -17,4 +17,8 @@ urlpatterns = [
     path('services/', views.services ,name="services"),
     path('help/', views.help ,name="help"),
     path('about/', views.about ,name="about"),
+    path('bookings/', views.bookings ,name="booking"),
+    
+    # 🌟 NEW: Path for handling booking form submission
+    path('book-appointment-submit/', views.book_appointment_submit ,name="book_appointment"), 
 ]
