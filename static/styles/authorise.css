@@ -117,3 +117,36 @@
 .tab-content.active {
     display: block;
 }
+
+/* Styles for the Login and Signup Pages */
+.form-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px; /* Offset for sticky header */
+    min-height: 80vh;
+    background-color: #f4f7f6;
+}
+
+.form-content {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-content h2 {
+    margin-bottom: 20px;
+    color: #007bff;
+    text-align: center;
+}
+
+.form-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

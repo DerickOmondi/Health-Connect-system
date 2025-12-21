@@ -7,98 +7,22 @@
 <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
 {% endblock %}
 
-{% block header %}
-<header class="main-header">
-  <div class="header-container">
-    <div class="logo-group">
-      <a href="{% url 'index' %}"
-        ><img
-          src="{% static 'images/logo.jpg' %}"
-          alt="HealthConnect Logo"
-          class="logo-image"
-      /></a>
-      <p class="logo">HEALTH<br />CONNECT</p>
-    </div>
-
-    <nav class="main-nav">
-      <ul>
-        <li><a href="{% url 'user' %}" class="nav-link active">Dashboard</a></li>
-        <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
-        <li><a href="{% url 'services' %}" class="nav-link">Services</a></li>
-        
-        {% if request.user.is_superuser or request.user.is_staff %}
-        <li><a href="{% url 'admin_panel' %}" class="nav-link">Admin Panel</a></li>
-        {% endif %}
-      </ul>
-    </nav>
-
-    <div class="user-info">
-      <span class="welcome-text">Hello, {{ request.user.first_name|default:request.user.username }}!</span>
-      
-      <div class="user-actions">
-        <a href="{% url 'logout' %}" class="cta-button">Log Out</a>
-      </div>
-    </div>
-  </div>
-</header>
-{% endblock header %} 
-
 {% block content %}
 <div class="dashboard-container">
-    
     <div class="welcome-widget">
         <div>
-            <h1>Welcome Back, {{ request.user.first_name|default:request.user.username }}!</h1>
-           
+            <h1>Welcome Back, {{ user.first_name }}!</h1>
+            <p>Access your health overview and appointments below.</p>
         </div>
-        <div class="status-indicator">
-            Account Status: Active
-        </div>
+        <div class="status-indicator">Account Status: Active</div>
     </div>
 
     <div class="dashboard-grid">
-        
         <div class="quick-action-card">
             <h3>Book Appointment</h3>
-            <p>Find and schedule a consultation with a specialist instantly.</p>
+            <p>Schedule a consultation with a specialist.</p>
             <a href="{% url 'booking' %}">Schedule Now</a>
         </div>
-        
-        <div class="quick-action-card">
-            <h3>My Health Records</h3>
-            <p>Access your medical history, test results, and prescriptions.</p>
-            <a href="#">View Records</a>
         </div>
-        
-        <div class="quick-action-card">
-            <h3>Update Profile</h3>
-            <p>Keep your contact information and details up-to-date.</p>
-            <a href="#">Edit Details</a>
-        </div>
-
-    </div>
-
-    <div class="activity-section">
-        <h2>Upcoming Appointments</h2>
-        
-        <ul>
-            <li>
-                <strong>Next Check-up:</strong>
-                <span>Details</span>
-            </li>
-            <li>
-                <strong>Blood Test:</strong>
-                <span>Details</span>
-            </li>
-            <li>
-                <p>No appointments scheduled this month.</p>
-            </li>
-        </ul>
-        
-        <p class="center-link">
-            <a href="#">View All History</a>
-        </p>
-    </div>
-
 </div>
 {% endblock %}

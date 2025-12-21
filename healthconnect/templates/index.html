@@ -1,26 +1,31 @@
-{% extends "base.html" %} {% load static %} {% block title %}HealthConnect -
-Telemedicine Platform{% endblock %} {% block extra_css %}
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block title %}HealthConnect - Telemedicine Platform{% endblock %} 
+
+{% block extra_css %}
 <link rel="stylesheet" href="{% static 'styles/index.css' %}" />
-{% endblock %} {% block content %}
-<main class="homepage-content">
+{% endblock %} 
+
+{% block content %}
+<div class="homepage-wrapper">
   <section class="hero-section">
-    <h1>
-      Your Health Matters. Access Care With Ease Anywhere Through HealthConnect
-    </h1>
-    <p class="hero-subtitle">
-      HealthConnect is a secure telemedicine platform bridging the gap between
-      patients and certified healthcare professionals, ensuring universal,
-      interactive, and easy-to-use health access and also access health related
-      information.
-    </p>
-    <div class="hero-cta-group">
-      <a href="{% url 'signup' %}" class="cta-button primary"> Get Started </a>
-      <a href="{% url 'services' %}" class="cta-button secondary">
-        Learn More
-      </a>
+    <div class="hero-content">
+        <h1>Your Health Matters. <br> Access Care With Ease Anywhere.</h1>
+        <p class="hero-subtitle">
+          HealthConnect is a secure telemedicine platform bridging the gap between
+          patients and certified healthcare professionals, ensuring universal,
+          interactive, and easy-to-use health access.
+        </p>
+        <div class="hero-cta-group">
+          <a href="{% url 'signup' %}" class="cta-button primary"> Get Started </a>
+          <a href="{% url 'services' %}" class="cta-button secondary"> Learn More </a>
+        </div>
     </div>
   </section>
-</main>
-{% endblock %} {% block extra_js %}
-<script src="{% static 'scripts/base.js' %}"></script>
+</div>
+{% endblock %} 
+
+{% block extra_js %}
+<script src="{% static 'scripts/base.js' %}" defer></script>
 {% endblock %}

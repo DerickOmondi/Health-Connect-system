@@ -1,6 +1,11 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Log In{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'styles/authorise.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="form-page-wrapper">

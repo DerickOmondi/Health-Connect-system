@@ -8,141 +8,63 @@
 {% endblock %}
 
 {% block content %}
-<main class="help-page-content">
-  <section class="help-hero-section">
-    <h1>Hello, how can we help you today?</h1>
-    <p class="section-subtitle">
-      Find answers to the most frequently asked questions about booking,
-      consultations, and platform security.
+<section class="help-hero-section">
+  <h1>Hello, how can we help you today?</h1>
+  <p class="section-subtitle">
+    Find answers to the most frequently asked questions about booking,
+    consultations, and platform security.
+  </p>
+  <div class="search-box">
+    <input type="text" placeholder="Search for a topic (e.g., 'reschedule', 'video call')">
+    <button class="btn-primary">Search</button>
+  </div>
+</section>
+
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-category">
+    <h3>Access & Account</h3>
+    <details class="faq-item">
+      <summary>How do I sign up for a HealthConnect account?</summary>
+      <p>
+        You can create a new account by navigating to the
+        <a href="{% url 'signup' %}">Sign Up page</a>. You will need to provide
+        your first name, last name, email address, and a secure password.
+      </p>
+    </details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Consultations & Bookings</h3>
+    <details class="faq-item">
+      <summary>What happens if I miss my scheduled appointment?</summary>
+      <p>
+        If you miss your appointment, you can reschedule via your Dashboard. 
+        Please note our 24-hour cancellation policy for refunds.
+      </p>
+    </details>
+  </div>
+
+  <div class="faq-category">
+    <h3>Security and Privacy</h3>
+    <details class="faq-item">
+      <summary>How secure is my medical data on HealthConnect?</summary>
+      <p>
+        Your privacy and confidentiality are our highest priority. All data is
+        transmitted and stored using industry-standard encryption protocols.
+        Our platform adheres strictly to the <strong>Data Protection and Privacy Acts of Kenya</strong>.
+      </p>
+    </details>
+  </div>
+
+  <div class="contact-support" style="margin-top: 40px; text-align: center;">
+    <h2>Still need assistance?</h2>
+    <p>If your question is not answered above, please contact our support team:</p>
+    <p>
+      <strong>Email:</strong> support@healthconnect.co.ke <br />
+      <strong>Phone:</strong> +254 7XX XXX XXX (Mon-Fri, 9am - 5pm EAT)
     </p>
-    <div class="search-box">
-      <input type="text" placeholder="Search for a topic (e.g., 'reschedule', 'video call')">
-      <button>Search</button>
-    </div>
-  </section>
-
-  <section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-category">
-      <h3>Access & Account</h3>
-      <details class="faq-item">
-        <summary>How do I sign up for a HealthConnect account?</summary>
-        <p>
-          You can create a new account by navigating to the
-          <a href="{% url 'signup' %}">Sign Up page</a>. You will need to provide
-          your first name, last name, email address, and a secure password.
-        </p>
-      </details>
-      <details class="faq-item">
-        <summary>I forgot my password. How can I reset it?</summary>
-        <p>
-          On the login page, click "Forgot Password." You will be prompted to
-          enter your email address, and we will send you a secure link to reset
-          your password.
-        </p>
-      </details>
-      <details class="faq-item">
-        <summary>How do I update my personal information?</summary>
-        <p>
-          Log in and go to your <a href="{% url 'user' %}">User Dashboard</a>.
-          Select the 'Update Profile' option to modify your contact details and
-          other information.
-        </p>
-      </details>
-    </div>
-
-    <div class="faq-category">
-      <h3>Appointments & Services</h3>
-      <details class="faq-item">
-        <summary>How do I book a new appointment?</summary>
-        <p>
-          Log in and navigate to the
-          <a href="{% url 'services' %}">Services page</a> or click 'Book Appointment'
-          on your dashboard. You can choose your preferred healthcare
-          professional, consultation type (Video, Audio, or Secure Messaging),
-          and a suitable time slot.
-        </p>
-      </details>
-      <details class="faq-item">
-        <summary>Can I reschedule or cancel an appointment?</summary>
-        <p>
-          Yes, all appointments can be managed directly from your User Dashboard.
-          Select the appointment you wish to change and choose the 'Reschedule'
-          or 'Cancel' option. Please check our cancellation policy for any fees
-          associated with late cancellations.
-        </p>
-      </details>
-      <details class="faq-item">
-        <summary>What are the available consultation modalities?</summary>
-        <p>
-          HealthConnect supports three modalities:
-          <ul>
-            <li>
-              <strong>Real-time Secure Video/Audio:</strong> For comprehensive virtual
-              consultations.
-            </li>
-            <li>
-              <strong>Secure Messaging:</strong> Ideal for non-urgent queries and
-              follow-ups with your doctor.
-            </li>
-          </ul>
-        </p>
-      </details>
-    </div>
-
-    <div class="faq-category">
-      <h3>Technical Help</h3>
-      <details class="faq-item">
-        <summary>What equipment do I need for a video consultation?</summary>
-        <p>
-          You will need a computer, tablet, or smartphone with a stable internet
-          connection, a working camera, and a microphone. For the best experience,
-          ensure your bandwidth is sufficient for video streaming.
-        </p>
-      </details>
-      <details class="faq-item">
-        <summary>What happens if my internet connection drops during a call?</summary>
-        <p>
-          If your connection is lost, try to reconnect immediately. If the video
-          call cannot be restored, the healthcare professional will attempt to
-          call you on your registered phone number to complete the consultation.
-        </p>
-      </details>
-    </div>
-
-    <div class="faq-category">
-      <h3>Security and Privacy</h3>
-      <details class="faq-item">
-        <summary>How secure is my medical data on HealthConnect?</summary>
-        <p>
-          Your privacy and confidentiality are our highest priority. All data is
-          transmitted and stored using industry-standard encryption protocols.
-          Our platform is designed to adhere strictly to the
-          <strong>Data Protection and Privacy Acts of Kenya</strong> to ensure
-          absolute security of your personal health information.
-        </p>
-      </details>
-      <details class="faq-item">
-        <summary>Can I access my past medical records?</summary>
-        <p>
-          Yes, all your medical records, including consultation notes, lab
-          results, and prescriptions, are securely stored and accessible via your
-          User Dashboard at any time.
-        </p>
-      </details>
-    </div>
-
-    <div class="contact-support">
-      <h2>Still need assistance?</h2>
-      <p>
-        If your question is not answered above, please contact our support team:
-      </p>
-      <p>
-        <strong>Email:</strong> support@healthconnect.co.ke <br />
-        <strong>Phone:</strong> +254 7XX XXX XXX (Mon-Fri, 9am - 5pm EAT)
-      </p>
-    </div>
-  </section>
-</main>
+  </div>
+</section>
 {% endblock %}

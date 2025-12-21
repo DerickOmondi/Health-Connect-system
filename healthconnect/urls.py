@@ -1,5 +1,3 @@
-# myproject/urls.py
-
 from django.contrib import admin
 from django.urls import path
 from healthconnect import views
@@ -7,7 +5,6 @@ from healthconnect import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'), 
-    path('index/', views.index ,name="index"), 
     
     path('admin-panel/', views.admin_panel, name='admin_panel'), 
     path('user/', views.user ,name="user"),
@@ -18,7 +15,5 @@ urlpatterns = [
     path('help/', views.help ,name="help"),
     path('about/', views.about ,name="about"),
     path('bookings/', views.bookings ,name="booking"),
-    
-    # 🌟 NEW: Path for handling booking form submission
     path('book-appointment-submit/', views.book_appointment_submit ,name="book_appointment"), 
 ]

@@ -1,3 +1,6 @@
+/* header.css */
+
+/* Resetting default browser margins and padding */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,197 +10,101 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #edf0f2;
+    color: #333;
 }
 
-
+/* Updated Main Header */
 .main-header {
-    background-color: #dfdbdb;
-    box-shadow: 0 2px 4px rgba(149, 148, 148, 0.1); 
-    padding: 4px 0;
+    background-color: #dfdbdb; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 25px 0; /* Increased padding for a spacious look */
     position: sticky;
     top: 0;
     z-index: 1000;
-    margin: 0px 5px 0px 5px;
+    width: 100%;
 }
 
 .header-container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 100%;      /* Changed from 1200px to 100% to push content to the edges */
+    margin: 0;            /* Removed auto-margin to stop centering */
+    padding: 0 30px;      /* Side padding to keep content slightly off the screen edge */
     display: flex; 
-    justify-content: space-between;
+    justify-content: space-between; /* Pushes logo to left and nav/auth to right */
     align-items: center;
 }
 
-
+/* Logo Styling */
 .logo-group {
     display: flex;
-    align-items: center; 
-}
-
-
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #007bff;
-    text-decoration: none;
-    letter-spacing: -0.5px;
-    margin-top: 0; 
-    transition: color 0.3s ease;
-    margin-left: 10px;
-    line-height: 1.1;
-    margin-bottom: 0;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-.logo-image {
-    height: 100px;
-    width: auto;
-    border-radius: 15px;
-
-}
-
-
-.logo:hover {
-    color: #0056b3;
-}
-
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
     align-items: center;
-    gap: 60px;
-    font-weight: 700;
-    
-    
 }
 
-.main-nav li {
-    margin: 0 15px;
-    font-size: 16px;
-   
-}
-
-.nav-link {
+.logo-link {
     text-decoration: none;
-    color: #343a40;
-    font-size: 26px;
-    padding: 10px 0;
-    transition: color 0.3s ease;
-    
+    display: flex;         /* Children sit side-by-side */
+    align-items: center;   /* Vertical alignment */
+    gap: 12px;             /* Space between image and text */
 }
 
-.nav-link:hover,
-.nav-link.active {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-}
-
-
-.cta-button {
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
+.logo-img {
+    height: 50px;          /* Adjusted for the larger header */
+    width: auto;
     border-radius: 5px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 800;
+    color: #007bff;        /* HealthConnect Blue */
+    text-transform: uppercase;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Navigation Links */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.main-nav a {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    
+    color: #444;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
 }
 
-.cta-button:hover {
-    background-color: #1e7e34;
-    transform: translateY(-1px);
+.main-nav a:hover {
+    color: #007bff;
 }
 
+/* Authentication Buttons */
 .auth-links {
     display: flex;
+    gap: 12px;
     align-items: center;
-    gap: 15px; 
 }
-
 
 .auth-link {
     text-decoration: none;
-    
-
-    font-size: 16px; 
-    
-    font-weight: 600; 
+    font-size: 14px; 
+    font-weight: bold; 
+    padding: 10px 20px; 
+    border-radius: 6px; 
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    
-
-    padding: 8px 15px; 
-    
-    border-radius: 10px; 
-    border: 2px solid transparent; 
 }
 
-
-.auth-link .icon {
-    font-size: 18px;
-    margin-right: 5px;
-}
-
-
-#login-modal-btn {
+/* Log In Button style */
+.auth-link:not(.signup-btn) {
     background-color: #007bff; 
     color: white; 
-    border-color: #007bff;
 }
 
-#login-modal-btn:hover {
-    background-color: #0056b3; 
-    border-color: #0056b3;
-    transform: translateY(-1px);
-}
-
-#login-modal-btn .icon {
-    color: white;
-}
-
+/* Sign Up Button style */
 .signup-btn {
-    background-color: transparent;
-    color: #007bff; 
     border: 2px solid #007bff;
-}
-
-.signup-btn:hover {
-    background-color: #007bff; 
-    color: white; 
-    transform: translateY(-1px);
-}
-
-/* Add these styles to your header.css */
-
-.user-info {
-    display: flex;
-    align-items: center; /* Vertically center items */
-    gap: 20px; /* Spacing between welcome text and actions */
-}
-
-.welcome-text {
-    font-size: 18px;
-    color: #343a40;
-    font-weight: 500;
-}
-
-.user-actions {
-    /* If you had more than just the logout button, this would organize them */
-    display: flex;
-    align-items: center;
-}
-
-/* Ensure the cta-button style remains clean in this context */
-.cta-button {
-    /* ... existing styles ... */
-    padding: 8px 16px; /* Slightly smaller padding for better header fit */
+    color: #007bff;
 }
