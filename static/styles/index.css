@@ -1,211 +1,168 @@
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  color: #333;
+/* index.css */
+
+/* Remove constraints from the parent container just for the homepage if necessary */
+.base-container {
+    max-width: 100%; /* Allows hero to hit the edges */
+    padding: 0;      /* Removes the default padding for a flush look */
 }
 
-.homepage-content {
-  min-height: 80vh;
+.homepage-wrapper {
+    width: 100%;
+    margin: 0;
 }
 
-.hero-section,
-.features-section,
-.impact-section {
-  padding: 60px 20px;
-  text-align: center;
-}
+/* index.css */
 
 .hero-section {
-  background-color: #e9f7ff;
+    background: linear-gradient(135deg, #e9f7ff 0%, #ffffff 100%);
+    /* Adjust the subtraction (e.g., from 80px to 100px) 
+       to match your new header height */
+    min-height: calc(100vh - 100px); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
 }
 
-.data-security-section {
-  background-color: #f7f7f7;
-  padding: 60px 20px;
+.hero-content {
+    max-width: 900px;
+    animation: fadeIn 1s ease-in;
 }
 
 .hero-section h1 {
-  font-size: 2.5em;
-  color: #004085;
-  margin-bottom: 10px;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
+    color: #004085;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    font-weight: 800;
 }
 
-.hero-subtitle,
-.section-subtitle {
-  font-size: 1.1em;
-  max-width: 800px;
-  margin: 20px auto;
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
 }
 
 .hero-cta-group {
-  margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .cta-button {
-  padding: 12px 30px;
-  font-size: 1.1em;
-  text-decoration: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-  display: inline-block;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px; /* Rounded pill shape */
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
 }
 
 .cta-button.primary {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  margin-right: 15px;
+    background-color: #007bff;
+    color: white;
 }
 
 .cta-button.secondary {
-  background-color: transparent;
-  color: #007bff;
-  border: 2px solid #007bff;
+    border: 2px solid #007bff;
+    color: #007bff;
+    background-color: transparent;
 }
 
-.cta-button.primary:hover {
-  background-color: #0056b3;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.cta-button.secondary:hover {
-  background-color: #e9f7ff;
+
+/* index.css additions for Services Page */
+
+/* --- Feature Grid Layout --- */
+.features-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff; /* Clean white background for the grid area */
 }
 
 .feature-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* --- Feature Card Styling --- */
 .feature-card {
-  width: 22%;
-  min-width: 250px;
-  padding: 25px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  background-color: white;
-  text-align: left;
-
-  display: block;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 5px solid #007bff; /* Medical Blue accent */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
 }
 
-.feature-card .card-title {
-  color: #007bff;
-  font-size: 1.3em;
-  margin-top: 0;
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #004085;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- Data Security Section --- */
+.data-security-section {
+    background-color: #eef7ff; /* Soft blue background */
+    padding: 60px 20px;
+    margin-top: 40px;
 }
 
 .security-content-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  text-align: left;
-}
-
-.security-text-block {
-  flex: 1;
-  min-width: 300px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .security-title {
-  color: #004085;
-  font-size: 2em;
+    font-size: 2rem;
+    color: #004085;
+    margin-bottom: 20px;
+}
+
+.security-paragraph {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 25px;
+    line-height: 1.7;
 }
 
 .security-list {
-  list-style: none;
-  padding-left: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .security-list li {
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #28a745;
-}
-
-.security-image-block {
-  flex: 1;
-  min-width: 300px;
-  height: 200px;
-  background-color: #ccc;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #555;
-  font-style: italic;
-}
-
-.impact-title {
-  color: #28a745;
-}
-
-.admin-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: #007bff;
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-@media (max-width: 900px) {
-  .feature-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .feature-card {
-    width: 80%;
-  }
-
-  .security-content-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* --- Footer Styles --- */
-
-.main-footer {
-    background-color: #333; /* Dark background */
-    color: #f8f9fa; /* Light text */
-    padding: 20px 0;
-    /* KEY: This centers the text content */
-    text-align: center; 
-    border-top: 4px solid #007bff; /* Accent color border */
-    margin-top: 40px; /* Space above the footer */
-}
-
-.footer-container {
-    /* Optional: Sets a max width and uses auto margins to center the entire block */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.main-footer p {
-    font-size: 0.9em;
-    margin-bottom: 10px;
-}
-
-.footer-nav a {
-    color: #a0c4ff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 0.9em;
-    transition: color 0.3s ease;
-}
-
-.footer-nav a:hover {
-    color: white;
-    text-decoration: underline;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
