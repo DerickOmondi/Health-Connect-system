@@ -1,28 +1,61 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
 
-{% block title %}User Dashboard{% endblock %} 
+{% block title %}User Dashboard{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'styles/dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'styles/user.css' %}">
 {% endblock %}
 
 {% block content %}
-<div class="dashboard-container">
-    <div class="welcome-widget">
-        <div>
-            <h1>Welcome Back, {{ user.first_name }}!</h1>
-            <p>Access your health overview and appointments below.</p>
-        </div>
-        <div class="status-indicator">Account Status: Active</div>
-    </div>
+<div class="dashboard-wrapper">
+    <button id="menu-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
 
-    <div class="dashboard-grid">
-        <div class="quick-action-card">
-            <h3>Book Appointment</h3>
-            <p>Schedule a consultation with a specialist.</p>
-            <a href="{% url 'booking' %}">Schedule Now</a>
+    <nav id="sidebar-menu" class="nav-menu">
+        <div class="menu-header">
+            <h3>Menu</h3>
         </div>
+        <ul>
+            <li><a href="#">My Profile</a></li>
+            <li><a href="#">Appointments</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#" class="logout-link">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="welcome-widget">
+            <div>
+                <h1>Welcome Back, {{ user.first_name }}!</h1>
+                <p>Access your health overview and appointments below.</p>
+            </div>
+            <div class="status-indicator">Account Status: Active</div>
         </div>
+
+        <div class="dashboard-grid">
+            <div class="quick-action-card">
+                <h3>Book Appointment</h3>
+                <p>Schedule a consultation with a specialist.</p>
+                <a href="{% url 'booking' %}">Schedule Now</a>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebarMenu = document.getElementById('sidebar-menu');
+
+    menuToggle.addEventListener('click', () => {
+        // Toggle 'active' class on button for the X animation
+        menuToggle.classList.toggle('active');
+        // Toggle 'open' class on menu to slide it in
+        sidebarMenu.classList.toggle('open');
+    });
+</script>
 {% endblock %}
