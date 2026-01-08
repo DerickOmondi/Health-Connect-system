@@ -9,25 +9,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="dashboard-wrapper">
-    <button id="menu-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </button>
 
-    <nav id="sidebar-menu" class="nav-menu">
-        <div class="menu-header">
-            <h3>Menu</h3>
-        </div>
-        <ul>
-            <li><a href="#">My Profile</a></li>
-            <li><a href="#">Appointments</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#" class="logout-link">Logout</a></li>
-        </ul>
-    </nav>
 
+  
     <div class="dashboard-container">
         <div class="welcome-widget">
             <div>
@@ -47,15 +31,4 @@
     </div>
 </div>
 
-<script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebarMenu = document.getElementById('sidebar-menu');
-
-    menuToggle.addEventListener('click', () => {
-        // Toggle 'active' class on button for the X animation
-        menuToggle.classList.toggle('active');
-        // Toggle 'open' class on menu to slide it in
-        sidebarMenu.classList.toggle('open');
-    });
-</script>
 {% endblock %}

@@ -1,91 +1,74 @@
-/* user.css additions */
-
-/* 1. Positioning the Wrapper and Container */
-.dashboard-wrapper {
-    position: relative;
-    overflow-x: hidden; /* Prevents horizontal scroll when menu is hidden */
-}
-
-/* 2. Menu Styling (Hidden by default) */
+/* --- 1. Sidebar Menu --- */
 .nav-menu {
     position: fixed;
     top: 0;
-    left: -250px; /* Start off-screen */
-    width: 250px;
-    height: 100%;
+    left: -280px; /* Off-screen */
+    width: 280px;
+    height: 100vh;
     background-color: #ffffff;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    z-index: 1000;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
     transition: left 0.3s ease-in-out;
-    padding-top: 80px; /* Space for the button */
-    margin-top: 100px;
+    z-index: 2000; 
+    padding-top: 80px;
 }
 
-/* When the JavaScript adds 'open', the menu slides in */
-.nav-menu.open {
+.nav-menu.active {
     left: 0;
 }
 
-.menu-header {
-    padding: 0 20px 20px;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 10px;
-}
-
-.nav-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.nav-menu li a {
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    transition: background 0.2s;
-}
-
-.nav-menu li a:hover {
-    background-color: #f0f7ff;
-    color: #007bff;
-}
-
-.logout-link {
-    color: #dc3545 !important; /* Red for logout */
-}
-
-/* 3. Button Strategic Placement */
+/* --- 2. Hamburger Button --- */
 .hamburger-menu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 21px;
+    height: 20px; /* Give the container height */
     background: transparent;
     border: none;
     cursor: pointer;
-    position: absolute;
-    top: 25px;
-    left: 20px;
-    z-index: 1001; /* Ensure button stays above the menu */
+    position: relative; 
+    margin-left: 15px;
+    z-index: 2100;
+    padding: 0;
 }
 
 .hamburger-menu .bar {
+    display: block;
     width: 100%;
-    height: 3px;
+    height: 3px; /* MUST HAVE HEIGHT TO BE VISIBLE */
     background-color: #007bff;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
 
-/* 4. Button Animation (Turns into X) */
+/* --- 3. Menu Animation --- */
 .hamburger-menu.active .bar:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
 }
 .hamburger-menu.active .bar:nth-child(2) {
     opacity: 0;
 }
 .hamburger-menu.active .bar:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --- 4. Sidebar Link Styling --- */
+.menu-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+}
+.nav-menu li a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+.nav-menu li a:hover {
+    background-color: #f0f7ff;
+    color: #007bff;
 }

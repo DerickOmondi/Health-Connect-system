@@ -6,7 +6,8 @@
     <title>{% block title %}HealthConnect{% endblock %}</title>
 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styles/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/header.css' %}" /> 
+    <link rel="stylesheet" href="{% static 'styles/user.css' %}" />
 
     {% block extra_css %}{% endblock %}
   </head>
@@ -15,14 +16,11 @@
       <div class="header-container">
         <div class="logo-group">
           <a href="{% url 'index' %}" class="logo-link">
-            <img
-              src="{% static 'images/logo.jpg' %}"
-              alt="HealthConnect Logo"
-              class="logo-img"
-            />
+            <img src="{% static 'images/logo.jpg' %}" alt="HealthConnect Logo" class="logo-img" />
             <p class="logo-text">HEALTH CONNECT</p>
           </a>
         </div>
+        
         <nav class="main-nav">
           <ul>
             <li><a href="{% url 'index' %}" >Home</a></li>
@@ -33,30 +31,44 @@
             {% endif %}
           </ul>
         </nav>
+
         <div class="auth-links">
           {% if user.is_authenticated %}
-          <span class="welcome-text">Hi, {{ user.first_name }}</span>
-          <a href="{% url 'logout' %}" class="auth-link">Logout</a>
+            <span class="welcome-text">Hi, {{ user.first_name }}</span>
+            <a href="{% url 'logout' %}" class="auth-link">Logout</a>
+
+            <div class="dashboard-wrapper">
+                <button id="menu-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav id="sidebar-menu" class="nav-menu">
+                    <div class="menu-header">
+                        <h3>Menu</h3>
+                    </div>
+                    <ul>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Appointments</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="{% url 'logout' %}" class="logout-link">Logout</a></li>
+                    </ul>
+                </nav>
+            </div> 
           {% else %}
-          <a href="{% url 'login' %}" class="auth-link">Login</a>
-          <a href="{% url 'signup' %}" class="auth-link signup-btn">Sign Up</a>
+            <a href="{% url 'login' %}" class="auth-link">Login</a>
+            <a href="{% url 'signup' %}" class="auth-link signup-btn">Sign Up</a>
           {% endif %}
         </div>
       </div>
     </header>
 
-    {% if messages %}
-    <div class="messages">
-      {% for message in messages %}
-      <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-      {% endfor %}
-    </div>
-    {% endif %}
-
     <main class="base-container">
       {% block content %}{% endblock %}
     </main>
 
+    <script src="{% static 'scripts/buttons.js' %}"></script>
     {% block extra_js %}{% endblock %}
   </body>
 </html>
