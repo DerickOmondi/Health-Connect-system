@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block content %}
+<<<<<<< HEAD
 
 
   
@@ -27,8 +28,27 @@
                 <p>Schedule a consultation with a specialist.</p>
                 <a href="{% url 'booking' %}">Schedule Now</a>
             </div>
+=======
+<div class="dashboard-container">
+    <div class="welcome-widget">
+        <div>
+            <h1>Welcome Back, {{ user.first_name }}!</h1>
+            <p>Access your health overview and appointments below.</p>
+>>>>>>> c580c18bf6d8f71fb8dfd8f82fcfcbded658e853
         </div>
+        <div class="status-indicator">Account Status: Active</div>
     </div>
+<<<<<<< HEAD
+=======
+
+    <div class="dashboard-grid">
+        <div class="quick-action-card">
+            <h3>Book Appointment</h3>
+            <p>Schedule a consultation with a specialist.</p>
+            <a href="{% url 'booking' %}">Schedule Now</a>
+        </div>
+        </div>
+>>>>>>> c580c18bf6d8f71fb8dfd8f82fcfcbded658e853
 </div>
 
 {% endblock %}
