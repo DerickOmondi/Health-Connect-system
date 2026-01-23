@@ -5,6 +5,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'styles/index.css' %}" />
+<link rel="stylesheet" href="{% static 'styles/qr.css' %}" />
 {% endblock %} 
 
 {% block content %}
@@ -14,15 +15,35 @@
         <h1>Your Health Matters. <br> Access Care With Ease Anywhere.</h1>
         <p class="hero-subtitle">
           HealthConnect is a secure telemedicine platform bridging the gap between
-          patients and certified healthcare professionals, ensuring universal,
-          interactive, and easy-to-use health access.
+          patients and certified healthcare professionals.
         </p>
         <div class="hero-cta-group">
-          <a href="{% url 'signup' %}" class="cta-button primary"> Get Started </a>
+          {% if not user.is_authenticated %}
+            <a href="{% url 'signup' %}" class="cta-button primary"> Get Started </a>
+          {% else %}
+            <a href="{% url 'user' %}" class="cta-button primary"> Go to Dashboard </a>
+          {% endif %}
           <a href="{% url 'services' %}" class="cta-button secondary"> Learn More </a>
         </div>
     </div>
   </section>
+
+  {% if user.is_authenticated %}
+  <div class="qr-float-container">
+      <div class="qr-mini-widget">
+          {% if user_data.qr_code %}
+              <span>MY HEALTH ID</span>
+              <img src="{{ user_data.qr_code.url }}" alt="Your QR Code">
+              <a href="{% url 'qr_code' %}" class="qr-link-btn">FULLSCREEN</a>
+          {% else %}
+              <div class="qr-info">
+                  <p style="font-size: 11px; color: #666;">Generating ID...</p>
+              </div>
+          {% endif %}
+      </div>
+  </div>
+  {% endif %}
+
 </div>
 {% endblock %} 
 
