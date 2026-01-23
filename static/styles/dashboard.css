@@ -1,12 +1,10 @@
-/* healthconnect/static/css/dashboard.css */
-
 .dashboard-container {
     padding: 20px;
     max-width: 1200px;
     margin: 20px auto;
 }
 
-/* 1. Welcome and Status Widget */
+
 .welcome-widget {
     background-color: #fff;
     padding: 30px;
@@ -30,7 +28,7 @@
     font-weight: bold;
 }
 
-/* 2. Dashboard Grid */
+
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -54,9 +52,9 @@
     margin-bottom: 20px;
 }
 
-/* Quick Action Button Styles (Themed by Card) */
+
 .quick-action-card:nth-child(1) h3 {
-    color: #007bff; /* Blue */
+    color: #007bff; 
 }
 .quick-action-card:nth-child(1) a {
     display: inline-block;
@@ -69,7 +67,7 @@
 }
 
 .quick-action-card:nth-child(2) h3 {
-    color: #ffc107; /* Yellow */
+    color: #ffc107;
 }
 .quick-action-card:nth-child(2) a {
     display: inline-block;
@@ -82,7 +80,7 @@
 }
 
 .quick-action-card:nth-child(3) h3 {
-    color: #17a2b8; /* Cyan/Teal */
+    color: #17a2b8;
 }
 .quick-action-card:nth-child(3) a {
     display: inline-block;
@@ -95,7 +93,6 @@
 }
 
 
-/* 3. Recent Activity/Upcoming Appointments Section */
 .activity-section {
     background-color: #ffffff;
     padding: 30px;

@@ -11,7 +11,6 @@ class HealthConnectUsersAdmin(admin.ModelAdmin):
         'other_names',
         'email', 
         'username',
-        # ❌ date_joined was not here
     )
     
     list_filter = ('last_name',)

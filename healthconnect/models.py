@@ -31,8 +31,7 @@ class HealthConnectUsers(AbstractBaseUser):
     email = models.EmailField(unique=True, blank=False, null=False)
     username = models.CharField(max_length=30, unique=True, blank=False, null=False) 
   
-    # ❌ date_joined REMOVED
-    # last_login remains, with the fix for the previous TypeError
+    date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now=True, null=True, blank=True)
     
     is_active = models.BooleanField(default=True)

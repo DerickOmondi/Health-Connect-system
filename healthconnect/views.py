@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 from healthconnect.models import HealthConnectUsers 
 
-# --- Public Views ---
+
 def index(request):
     return render(request, 'index.html')
 
@@ -21,7 +21,6 @@ def help(request):
 def about(request):
     return render(request, 'about.html')
 
-# --- Authentication Views ---
 
 def signup(request):
     if request.user.is_authenticated:
@@ -39,7 +38,7 @@ def signup(request):
             user.set_password(request.POST.get('password'))
             user.save()
 
-            # Requirement: Message + Redirect to login (No auto-login)
+        
             messages.success(request, 'You have successfully created an account. Please log in.')
             return redirect('login') 
 
@@ -74,7 +73,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    messages.info(request, "You have been logged out successfully.")
+    messages.info(request, "Sad to see you leave {user.first_name},\n we'll be glad to have you back,log back in anytime,anywhere!!!!")
     return redirect('index')
 
 # --- Protected Views ---
@@ -89,7 +88,6 @@ def bookings(request):
 
 @login_required(login_url='login')
 def admin_panel(request):
-    """Renders the admin panel - Fixing the AttributeError."""
     if not request.user.is_superuser:
         messages.error(request, "Access denied.")
         return redirect('user') 
@@ -98,7 +96,6 @@ def admin_panel(request):
 
 @login_required(login_url='login')
 def book_appointment_submit(request):
-    """Handles booking submission."""
     if request.method == 'POST':
         messages.success(request, "Your appointment has been successfully booked!")
         return redirect('user')

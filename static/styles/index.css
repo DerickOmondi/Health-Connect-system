@@ -15,8 +15,6 @@
 
 .hero-section {
     background: linear-gradient(135deg, #e9f7ff 0%, #ffffff 100%);
-    /* Adjust the subtraction (e.g., from 80px to 100px) 
-       to match your new header height */
     min-height: calc(100vh - 100px); 
     display: flex;
     align-items: center;
@@ -32,7 +30,7 @@
 }
 
 .hero-section h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Responsive font size */
+    font-size: clamp(2rem, 5vw, 3.5rem);
     color: #004085;
     margin-bottom: 25px;
     line-height: 1.2;
@@ -59,7 +57,7 @@
     font-size: 1.1rem;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 50px; /* Rounded pill shape */
+    border-radius: 50px;
     transition: all 0.3s ease;
 }
 
@@ -85,29 +83,25 @@
 }
 
 
-/* index.css additions for Services Page */
-
-/* --- Feature Grid Layout --- */
 .features-section {
     padding: 60px 20px;
     text-align: center;
-    background-color: #ffffff; /* Clean white background for the grid area */
-}
+    background-color: #ffffff;
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* --- Feature Card Styling --- */
+
 .feature-card {
     background: #f8f9fa;
     padding: 30px;
     border-radius: 12px;
-    border-top: 5px solid #007bff; /* Medical Blue accent */
+    border-top: 5px solid #007bff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
@@ -130,9 +124,9 @@
     line-height: 1.6;
 }
 
-/* --- Data Security Section --- */
+
 .data-security-section {
-    background-color: #eef7ff; /* Soft blue background */
+    background-color: #eef7ff;
     padding: 60px 20px;
     margin-top: 40px;
 }

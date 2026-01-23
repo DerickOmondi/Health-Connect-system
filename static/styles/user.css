@@ -1,8 +1,7 @@
-/* --- 1. Sidebar Menu --- */
 .nav-menu {
     position: fixed;
     top: 0;
-    left: -280px; /* Off-screen */
+    left: -280px;
     width: 280px;
     height: 100vh;
     background-color: #ffffff;
@@ -16,13 +15,12 @@
     left: 0;
 }
 
-/* --- 2. Hamburger Button --- */
 .hamburger-menu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
-    height: 20px; /* Give the container height */
+    height: 20px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -35,13 +33,13 @@
 .hamburger-menu .bar {
     display: block;
     width: 100%;
-    height: 3px; /* MUST HAVE HEIGHT TO BE VISIBLE */
+    height: 3px;
     background-color: #007bff;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
 
-/* --- 3. Menu Animation --- */
+
 .hamburger-menu.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -52,7 +50,6 @@
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* --- 4. Sidebar Link Styling --- */
 .menu-header {
     padding: 20px;
     border-bottom: 1px solid #eee;

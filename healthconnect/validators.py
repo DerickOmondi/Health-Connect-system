@@ -2,9 +2,6 @@ import re
 from django.core.exceptions import ValidationError
 
 class CustomPasswordComplexityValidator:
-    """
-    Validates password for no spaces and at least one special character.
-    """
     def validate(self, password, user=None):
         if ' ' in password:
             raise ValidationError(
@@ -16,7 +13,7 @@ class CustomPasswordComplexityValidator:
         special_char_regex = re.compile(r'[^a-zA-Z0-9\s]')
         if not special_char_regex.search(password):
             raise ValidationError(
-                "Password must contain at least one special character (e.g., !@#$%^).",
+                "Password must contain at least one special character.",
                 code='password_no_special_char',
             )
 
